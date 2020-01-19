@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0f0f0f</color>
+    <color name="colorPrimaryDark">#0f0f0f</color>
+    <color name="navigationBarColor">#1b1b1b</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="moonContrast">#454A4B</color>
+
+    <color name="noM">#2196F3</color>
+    <color name="noMDark">#1E88E5</color>
+    <color name="binaural">#4CAF50</color>
+    <color name="binauralDark">#43A047</color>
+    <color name="notBinaural">#FAAF52</color>
+    <color name="notBinauralDark">#FF9919</color>
+    <color name="logout">#F44336</color>
+    <color name="logoutDark">#E53935</color>
+
+    <color name="star_color_1">#ffffff</color>
+    <color name="star_color_2">#25ADFF</color>
+    <color name="star_color_3">#FFC100</color>
+    <color name="star_color_4">#FF3800</color>
+</resources>
