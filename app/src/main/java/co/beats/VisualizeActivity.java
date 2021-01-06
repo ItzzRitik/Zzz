@@ -112,8 +112,8 @@ public class VisualizeActivity extends AppCompatActivity {
             @Override
             public void onStartTabSelected(String title, int i) {
                 if(mode == 0) newChart((i==0)?noA:noG, noTemp);
-                else if(mode == 1) newChart((i==0)?binA:binG, binTemp);
-                else if(mode == 2) newChart((i==0)?noBinA:noBinG, noBinTemp);
+                else if(mode == 1) newChart((i==0)?noBinA:noBinG, noBinTemp);
+                else if(mode == 2) newChart((i==0)?binA:binG, binTemp);
             }
             @Override public void onEndTabSelected(String title, int index) {}
         });
