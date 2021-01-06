@@ -24,6 +24,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:id="@+id/logo"
+        android:contentDescription="@string/logo"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"/>
@@ -54,15 +55,6 @@
             app:colorPressed="@color/binauralDark"
             app:icon="@drawable/music"
             app:hintText="When binaural beats are applied"/>
-
-        <com.imangazaliev.circlemenu.CircleMenuButton
-            android:id="@+id/logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:colorNormal="@color/logout"
-            app:colorPressed="@color/logoutDark"
-            app:icon="@drawable/logout"
-            app:hintText="Logout"/>
 
         <com.imangazaliev.circlemenu.CircleMenuButton
             android:id="@+id/noBinaural"

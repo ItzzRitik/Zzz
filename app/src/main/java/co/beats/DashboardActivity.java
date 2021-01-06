@@ -27,8 +27,6 @@ public class DashboardActivity extends AppCompatActivity {
     CircleMenu menu;
     ImageView logo;
 
-    SharedPreferences users;
-    SharedPreferences.Editor useredit;
     @Override
     protected void onStart() {
         super.onStart();
@@ -66,8 +64,6 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        users = getSharedPreferences("users", MODE_PRIVATE);
-        useredit = users.edit();
 
         setContentView(R.layout.activity_dashboard);
         starsView = findViewById(R.id.starsView);
@@ -100,16 +96,16 @@ public class DashboardActivity extends AppCompatActivity {
             public void onButtonClickAnimationEnd(@NonNull CircleMenuButton menuButton) {
                 String buttonHint = menuButton.getHintText();
                 Intent intent = new Intent(DashboardActivity.this, VisualizeActivity.class);
-                if(buttonHint.equals("When there is no movement")) intent.putExtra("mode", 0);
-                else if(buttonHint.equals("When binaural beats are not applied")) intent.putExtra("mode", 1);
-                else if(buttonHint.equals("When binaural beats are applied")) intent.putExtra("mode", 2);
-                else if(buttonHint.equals("Logout")){
-                    useredit.putString("currUser", null);
-                    useredit.apply();
-                    Intent intent1 = new Intent(DashboardActivity.this, LoginActivity.class);
-                    startActivity(intent1);
-                    DashboardActivity.this.finish();
-                    return;
+                switch (buttonHint) {
+                    case "When there is no movement":
+                        intent.putExtra("mode", 0);
+                        break;
+                    case "When binaural beats are not applied":
+                        intent.putExtra("mode", 1);
+                        break;
+                    case "When binaural beats are applied":
+                        intent.putExtra("mode", 2);
+                        break;
                 }
                 startActivity(intent);
             }
