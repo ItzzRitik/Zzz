@@ -64,25 +64,25 @@
                 android:layout_centerHorizontal="true"
                 android:backgroundTint="@color/noMDark"/>
             <Button
-                android:id="@+id/binaural"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:drawableStart="@drawable/music"
-                android:text="@string/when_binaural_beats_are_applied"
-                android:layout_below="@+id/noMovement"
-                android:layout_centerHorizontal="true"
-                android:backgroundTint="@color/binauralDark"/>
-            <Button
                 android:id="@+id/noBinaural"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="20dp"
                 android:drawableStart="@drawable/no_music"
                 android:text="@string/when_binaural_beats_are_not_applied"
-                android:layout_below="@+id/binaural"
+                android:layout_below="@+id/noMovement"
                 android:layout_centerHorizontal="true"
                 android:backgroundTint="@color/notBinauralDark"/>
+            <Button
+                android:id="@+id/binaural"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:drawableStart="@drawable/music"
+                android:text="@string/when_binaural_beats_are_applied"
+                android:layout_below="@+id/noBinaural"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/binauralDark"/>
         </RelativeLayout>
     </RelativeLayout>
 </LinearLayout>
