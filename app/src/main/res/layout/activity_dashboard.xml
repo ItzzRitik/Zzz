@@ -1,70 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#0f0f0f"
+    android:background="#ffffff"
+    android:orientation="vertical"
     tools:context=".DashboardActivity">
 
-    <com.sofakingforever.stars.AnimatedStarsView
-        android:id="@+id/starsView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:starsView_bigStarThreshold="10dp"
-        app:starsView_meteoritesColors="@array/meteorites_colors"
-        app:starsView_meteoritesEnabled="true"
-        app:starsView_meteoritesInterval="2000"
-        app:starsView_maxStarSize="16dp"
-        app:starsView_minStarSize="1dp"
-        app:starsView_starColors="@array/star_colors"
-        app:starsView_starCount="50" />
-
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:id="@+id/logo"
-        android:contentDescription="@string/logo"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"/>
-
-    <com.imangazaliev.circlemenu.CircleMenu
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
-        android:id="@+id/menu"
-        app:hintsEnabled="true">
-
-        <com.imangazaliev.circlemenu.CircleMenuButton
-            android:id="@+id/noMovement"
-            android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:colorNormal="@color/noM"
-            app:colorPressed="@color/noMDark"
-            app:icon="@drawable/sleepy"
-            app:hintText="When there is no movement"/>
+            android:paddingHorizontal="50dp"
+            android:layout_centerInParent="true"
+            android:background="#ffffff">
 
-        <com.imangazaliev.circlemenu.CircleMenuButton
-            android:id="@+id/binaural"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/AppLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/app_name"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textSize="68sp"
+                android:textColor="#787878"/>
+            <TextView
+                android:id="@+id/AppDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/AppLogo"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="@string/app_desc"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:textColor="#787878"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:colorNormal="@color/binaural"
-            app:colorPressed="@color/binauralDark"
-            app:icon="@drawable/music"
-            app:hintText="When binaural beats are applied"/>
-
-        <com.imangazaliev.circlemenu.CircleMenuButton
-            android:id="@+id/noBinaural"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:colorNormal="@color/notBinaural"
-            app:colorPressed="@color/notBinauralDark"
-            app:icon="@drawable/no_music"
-            app:hintText="When binaural beats are not applied"/>
-
-    </com.imangazaliev.circlemenu.CircleMenu>
-
-</RelativeLayout>
+            android:paddingHorizontal="20dp"
+            android:layout_centerInParent="true">
+            <Button
+                android:id="@+id/noMovement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:drawableStart="@drawable/sleepy"
+                android:text="@string/when_there_is_no_movement"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/noMDark"/>
+            <Button
+                android:id="@+id/binaural"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:drawableStart="@drawable/music"
+                android:text="@string/when_binaural_beats_are_applied"
+                android:layout_below="@+id/noMovement"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/binauralDark"/>
+            <Button
+                android:id="@+id/noBinaural"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:drawableStart="@drawable/no_music"
+                android:text="@string/when_binaural_beats_are_not_applied"
+                android:layout_below="@+id/binaural"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/notBinauralDark"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

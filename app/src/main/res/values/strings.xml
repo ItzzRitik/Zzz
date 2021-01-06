@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Zzz</string>
+    <string name="when_binaural_beats_are_not_applied">When binaural beats are not applied</string>
+    <string name="when_binaural_beats_are_applied">When binaural beats are applied</string>
+    <string name="when_there_is_no_movement">When there is no movement</string>
+    <string name="app_desc">Sleep pattern visualizer through binaural beats</string>
 </resources>

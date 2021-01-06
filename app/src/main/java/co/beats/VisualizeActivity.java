@@ -112,8 +112,8 @@ public class VisualizeActivity extends AppCompatActivity {
             @Override
             public void onStartTabSelected(String title, int i) {
                 if(mode == 0) newChart((i==0)?noA:noG, noTemp);
-                else if(mode == 1) newChart((i==0)?noBinA:noBinG, noBinTemp);
-                else if(mode == 2) newChart((i==0)?binA:binG, binTemp);
+                else if(mode == 1) newChart((i==0)?binA:binG, binTemp);
+                else if(mode == 2) newChart((i==0)?noBinA:noBinG, noBinTemp);
             }
             @Override public void onEndTabSelected(String title, int index) {}
         });
@@ -121,29 +121,29 @@ public class VisualizeActivity extends AppCompatActivity {
         mode = getIntent().getIntExtra("mode", -1);
         if(mode == 0) {
             getSupportActionBar().setTitle("No Movement");
-            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.noM)));
-            getWindow().setStatusBarColor(getResources().getColor(R.color.noMDark));
-            getWindow().setNavigationBarColor(getResources().getColor(R.color.noMDark));
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getColor(R.color.noM)));
+            getWindow().setStatusBarColor(getColor(R.color.noMDark));
+            getWindow().setNavigationBarColor(getColor(R.color.noMDark));
             tabs.setStripColor(getColor(R.color.noM));
             tabs.setActiveColor(getColor(R.color.noM));
             newChart(noA, noTemp);
         }
         else if(mode == 1) {
-            getSupportActionBar().setTitle("Without Binaural Beats");
-            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.notBinaural)));
-            getWindow().setStatusBarColor(getResources().getColor(R.color.notBinauralDark));
-            getWindow().setNavigationBarColor(getResources().getColor(R.color.notBinauralDark));
-            tabs.setStripColor(getColor(R.color.notBinaural));
-            tabs.setActiveColor(getColor(R.color.notBinaural));
+            getSupportActionBar().setTitle("With Binaural Beats");
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getColor(R.color.binaural)));
+            getWindow().setStatusBarColor(getColor(R.color.binauralDark));
+            getWindow().setNavigationBarColor(getColor(R.color.binauralDark));
+            tabs.setStripColor(getColor(R.color.binaural));
+            tabs.setActiveColor(getColor(R.color.binaural));
             newChart(noBinA, noBinTemp);
         }
         else if(mode == 2) {
-            getSupportActionBar().setTitle("With Binaural Beats");
-            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.binaural)));
-            getWindow().setStatusBarColor(getResources().getColor(R.color.binauralDark));
-            getWindow().setNavigationBarColor(getResources().getColor(R.color.binauralDark));
-            tabs.setStripColor(getColor(R.color.binaural));
-            tabs.setActiveColor(getColor(R.color.binaural));
+            getSupportActionBar().setTitle("Without Binaural Beats");
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getColor(R.color.notBinaural)));
+            getWindow().setStatusBarColor(getColor(R.color.notBinauralDark));
+            getWindow().setNavigationBarColor(getColor(R.color.notBinauralDark));
+            tabs.setStripColor(getColor(R.color.notBinaural));
+            tabs.setActiveColor(getColor(R.color.notBinaural));
             newChart(binA, binTemp);
         }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -151,11 +151,11 @@ public class VisualizeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home: finish();
+        if (item.getItemId() == android.R.id.home) {
+            finish();
             return true;
-            default: return super.onOptionsItemSelected(item);
         }
+        return super.onOptionsItemSelected(item);
     }
 
     public void newChart(final int[][] arr, double[] temp){
@@ -181,7 +181,7 @@ public class VisualizeActivity extends AppCompatActivity {
 
         LineData d = new LineData();
         ArrayList<Entry> entries = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++) entries.add(new Entry(i + 0.5f, arr[i][1]/100));
+        for (int i = 0; i < arr.length; i++) entries.add(new Entry(i + 0.5f, (float) arr[i][1]/100));
 
         LineDataSet set = new LineDataSet(entries, "Y Values/100");
         set.setColor(Color.rgb(240, 238, 70));
