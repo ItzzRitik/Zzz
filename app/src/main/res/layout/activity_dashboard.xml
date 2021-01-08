@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#B9C6DF"
     android:orientation="vertical"
     tools:context=".DashboardActivity">
 
@@ -15,8 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="50dp"
-            android:layout_centerInParent="true"
-            android:background="#ffffff">
+            android:layout_centerInParent="true">
 
             <TextView
                 android:id="@+id/AppLogo"
@@ -28,7 +27,7 @@
                 android:gravity="center"
                 android:textAllCaps="true"
                 android:textSize="68sp"
-                android:textColor="#787878"/>
+                android:textColor="#000000"/>
             <TextView
                 android:id="@+id/AppDesc"
                 android:layout_width="wrap_content"
@@ -40,7 +39,7 @@
                 android:textAllCaps="true"
                 android:textSize="16sp"
                 android:layout_marginTop="10dp"
-                android:textColor="#787878"/>
+                android:textColor="#000000"/>
         </RelativeLayout>
     </RelativeLayout>
 
